@@ -9,7 +9,11 @@ import numpy
 
 import sa_library.fitting as fitting
 import sa_library.ia_utilities_c as utilC
-import sa_library.matched_filter_c as matchedFilterC
+try:
+	import sa_library.matched_filter_c as matchedFilterC
+except:
+	print "Warning: Unable to load matchedFilter"
+
 import sa_library.multi_fit_c as multiC
 import simulator.drawgaussians as dg
 
