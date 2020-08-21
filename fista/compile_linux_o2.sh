@@ -3,5 +3,5 @@ gcc -shared -Wl,-soname,fista_decon_utilities.so.1 -o fista_decon_utilities.so.1
 ln -s fista_decon_utilities.so.1.0.1 fista_decon_utilities.so
 
 gcc -fPIC -g -c -Wall -O3 fista_fft.c
-gcc -shared -Wl,-soname,fista_fft.so.1 -o fista_fft.so.1.0.1 fista_fft.o -lc -l:/n/app/fftw/3.3.7/lib/libfftw3.so
+gcc -shared -Wl,-soname,fista_fft.so.1 -o fista_fft.so.1.0.1 fista_fft.o -lc -L /n/app/fftw/3.3.7/lib/ -lfftw3
 ln -s fista_fft.so.1.0.1 fista_fft.so

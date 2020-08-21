@@ -1,7 +1,7 @@
 #!/bin/bash
 
 gcc -fPIC -g -c -Wall -O3 multi_fit.c
-gcc -shared -Wl,-soname,multi_fit.so.1 -o multi_fit.so.1.0.1 multi_fit.o -l:/n/app/lapacke/3.6.1/lib/liblapacke.so
+gcc -shared -Wl,-soname,multi_fit.so.1 -o multi_fit.so.1.0.1 multi_fit.o -L /n/app/lapacke/3.6.1/lib/ -llapacke
 ln -s multi_fit.so.1.0.1 multi_fit.so
 
 gcc -fPIC -g -c -Wall -O3 ia_utilities.c
@@ -13,5 +13,5 @@ gcc -shared -Wl,-soname,grid.so.1 -o grid.so.1.0.1 grid.o
 ln -s grid.so.1.0.1 grid.so
 
 gcc -fPIC -g -c -Wall matched_filter.c
-gcc -shared -Wl,-soname,matched_filter.so.1 -o matched_filter.so.1.0.1 matched_filter.o -lc -l:/n/app/fftw/3.3.7/lib/libfftw3.so
+gcc -shared -Wl,-soname,matched_filter.so.1 -o matched_filter.so.1.0.1 matched_filter.o -lc -L /n/app/fftw/3.3.7/lib/ -lfftw3
 ln -s matched_filter.so.1.0.1 matched_filter.so
